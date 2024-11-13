@@ -8,17 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		FF068A7A2CE4CACE001272C2 /* BetterMeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF068A792CE4CACE001272C2 /* BetterMeApp.swift */; };
-		FF068A7C2CE4CACE001272C2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF068A7B2CE4CACE001272C2 /* ContentView.swift */; };
 		FF068A7E2CE4CADA001272C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF068A7D2CE4CADA001272C2 /* Assets.xcassets */; };
 		FF068A812CE4CADA001272C2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF068A802CE4CADA001272C2 /* Preview Assets.xcassets */; };
+		FF068A8D2CE4CCB5001272C2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF068A8C2CE4CCB5001272C2 /* HomeView.swift */; };
+		FF068A8F2CE4CCF7001272C2 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF068A8E2CE4CCF7001272C2 /* TabItem.swift */; };
+		FF068A952CE4D7BC001272C2 /* HabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF068A942CE4D7BC001272C2 /* HabitView.swift */; };
+		FF068A972CE4DACF001272C2 /* PlanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF068A962CE4DACF001272C2 /* PlanningView.swift */; };
+		FF068A992CE4DC70001272C2 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF068A982CE4DC70001272C2 /* StatisticsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FF068A762CE4CACE001272C2 /* BetterMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF068A792CE4CACE001272C2 /* BetterMeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterMeApp.swift; sourceTree = "<group>"; };
-		FF068A7B2CE4CACE001272C2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FF068A7D2CE4CADA001272C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF068A802CE4CADA001272C2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FF068A8C2CE4CCB5001272C2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		FF068A8E2CE4CCF7001272C2 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
+		FF068A942CE4D7BC001272C2 /* HabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitView.swift; sourceTree = "<group>"; };
+		FF068A962CE4DACF001272C2 /* PlanningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningView.swift; sourceTree = "<group>"; };
+		FF068A982CE4DC70001272C2 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +59,11 @@
 		FF068A782CE4CACE001272C2 /* BetterMe */ = {
 			isa = PBXGroup;
 			children = (
+				FF068A8A2CE4CBC1001272C2 /* DataBase */,
+				FF068A892CE4CBBA001272C2 /* Model */,
+				FF068A882CE4CBB1001272C2 /* View */,
+				FF068A872CE4CB91001272C2 /* ViewModel */,
 				FF068A792CE4CACE001272C2 /* BetterMeApp.swift */,
-				FF068A7B2CE4CACE001272C2 /* ContentView.swift */,
 				FF068A7D2CE4CADA001272C2 /* Assets.xcassets */,
 				FF068A7F2CE4CADA001272C2 /* Preview Content */,
 			);
@@ -65,6 +76,79 @@
 				FF068A802CE4CADA001272C2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FF068A872CE4CB91001272C2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FF068A882CE4CBB1001272C2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FF068A912CE4D6AF001272C2 /* Common */,
+				FF068A932CE4D6CB001272C2 /* Statistics */,
+				FF068A922CE4D6B6001272C2 /* Planning */,
+				FF068A902CE4D696001272C2 /* Habit */,
+				FF068A8B2CE4CBCB001272C2 /* Home */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FF068A892CE4CBBA001272C2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FF068A8A2CE4CBC1001272C2 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
+		FF068A8B2CE4CBCB001272C2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FF068A8C2CE4CCB5001272C2 /* HomeView.swift */,
+				FF068A8E2CE4CCF7001272C2 /* TabItem.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		FF068A902CE4D696001272C2 /* Habit */ = {
+			isa = PBXGroup;
+			children = (
+				FF068A942CE4D7BC001272C2 /* HabitView.swift */,
+			);
+			path = Habit;
+			sourceTree = "<group>";
+		};
+		FF068A912CE4D6AF001272C2 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		FF068A922CE4D6B6001272C2 /* Planning */ = {
+			isa = PBXGroup;
+			children = (
+				FF068A962CE4DACF001272C2 /* PlanningView.swift */,
+			);
+			path = Planning;
+			sourceTree = "<group>";
+		};
+		FF068A932CE4D6CB001272C2 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				FF068A982CE4DC70001272C2 /* StatisticsView.swift */,
+			);
+			path = Statistics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +221,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF068A7C2CE4CACE001272C2 /* ContentView.swift in Sources */,
+				FF068A8D2CE4CCB5001272C2 /* HomeView.swift in Sources */,
+				FF068A992CE4DC70001272C2 /* StatisticsView.swift in Sources */,
+				FF068A972CE4DACF001272C2 /* PlanningView.swift in Sources */,
+				FF068A952CE4D7BC001272C2 /* HabitView.swift in Sources */,
+				FF068A8F2CE4CCF7001272C2 /* TabItem.swift in Sources */,
 				FF068A7A2CE4CACE001272C2 /* BetterMeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
