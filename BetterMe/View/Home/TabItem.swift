@@ -31,9 +31,8 @@ struct TabItem<Content: View>: View {
                     .cornerRadius(24)
                     .padding(24)
                     .shadow(color: Color.white, radius: 12)
-            }
-        }.edgesIgnoringSafeArea(.all)
-        .tabItem {
+            }.edgesIgnoringSafeArea(.all)
+        }.tabItem {
             Image(systemName: icon)
             Text(title)
         }

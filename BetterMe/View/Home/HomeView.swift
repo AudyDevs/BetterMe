@@ -10,16 +10,17 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         TabView {
-            TabItem(title: "Habitos", icon: "medal.fill") {
+            TabItem(title: "Hábitos", icon: "medal.fill") {
                 HabitView()
             }
             TabItem(title: "Semanal", icon: "calendar") {
                 PlanningView()
             }
-            TabItem(title: "Estadisticas", icon: "chart.xyaxis.line") {
+            TabItem(title: "Estadísticas", icon: "chart.xyaxis.line") {
                 StatisticsView()
             }
         }
+        .accentColor(.red.opacity(0.75))
     }
 }
 
