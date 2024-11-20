@@ -10,14 +10,14 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         TabView {
+            TabItem(title: "Progreso", icon: "chart.xyaxis.line") {
+                ProgressView()
+            }
             TabItem(title: "Hábitos", icon: "medal.fill") {
                 HabitView()
             }
             TabItem(title: "Semanal", icon: "calendar") {
                 PlanningView()
-            }
-            TabItem(title: "Estadísticas", icon: "chart.xyaxis.line") {
-                StatisticsView()
             }
         }
         .accentColor(.red.opacity(0.75))

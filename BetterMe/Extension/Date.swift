@@ -44,6 +44,11 @@ extension Date {
         return dateFormatter.string(from: self)
     }
     
+    func startOfDay() -> Date {
+        let calendar = Calendar.current
+        return calendar.startOfDay(for: self)
+    }
+    
     func fetchDays() -> [Date] {
         let calendar = Calendar.current
         var currentDate = firstDayView

@@ -13,8 +13,8 @@ struct IconPickerSheet: View {
     let onAccept: () -> Void
 
     let icons: [String] = [
-        "house", "bell", "heart", "star", "gear", "person", "book", "cart",
-        "camera", "folder", "magnifyingglass", "phone"
+        "waterbottle.fill", "fork.knife", "carrot.fill", "dog.fill", "lightbulb", "figure.run", "figure.yoga", "text.book.closed.fill",
+        "bicycle", "leaf.fill", "text.bubble.fill", "dollarsign", "cross", "moon.zzz.fill", "house.fill", "airplane.departure"
     ]
     
     var body: some View {

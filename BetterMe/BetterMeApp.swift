@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct BetterMeApp: App {
@@ -13,5 +14,6 @@ struct BetterMeApp: App {
         WindowGroup {
             HomeView()
         }
+        .modelContainer(for: [Habit.self, Historic.self])
     }
 }

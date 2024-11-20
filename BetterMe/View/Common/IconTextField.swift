@@ -14,6 +14,7 @@ struct IconTextField: View {
     var body: some View {
         Image(systemName: icon)
             .resizable()
+            .scaledToFit()
             .frame(width: 25, height: 25)
             .foregroundStyle(color.toColor())
             .padding(14)

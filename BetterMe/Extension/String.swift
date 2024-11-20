@@ -30,3 +30,27 @@ extension String {
         }
     }
 }
+
+extension [String] {
+    func setFrequency() -> String {
+        var result = ""
+        let workableDays = ["Lun", "Mar", "Mié", "Jue", "Vie"]
+        let weekendDays = ["Sáb", "Dom"]
+        
+        if self.count == 7 {
+            result = "Todos los días"
+        } else if self.count == 5 && workableDays.allSatisfy({ self.contains($0) }) {
+            result = "Laborables"
+        } else if self.count == 2 && weekendDays.allSatisfy({ self.contains($0) }) {
+            result = "Festivos"
+        } else {
+            for day in self {
+                result = result + day + ", "
+            }
+            if !result.isEmpty {
+                result = String(result.dropLast(2))
+            }
+        }
+        return result
+    }
+}

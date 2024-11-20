@@ -16,12 +16,11 @@ struct FloatingButton: View {
                 .resizable()
                 .frame(width: 15, height: 15)
                 .foregroundColor(.white)
-                .font(.system(size: 10, weight: .bold))
+                .font(.system(size: 8, weight: .bold))
         }
-        .padding(10)
+        .padding(5)
         .background(Color.red.opacity(0.75))
         .mask(Circle())
-        .shadow(color: Color.red.opacity(0.75), radius: 10)
-        .zIndex(10)
+        .shadow(color: Color.red.opacity(0.75), radius: 8)
     }
 }

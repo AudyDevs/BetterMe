@@ -47,8 +47,12 @@ struct FrequencySelector: View {
             }
             .frame(maxWidth: .infinity)
             .padding(.vertical, 12)
+            .padding(.horizontal, 8)
             .background(.gray.opacity(0.2))
             .cornerRadius(16)
+            .onAppear {
+                initDaysSelection()
+            }
             .onChange(of: frequency) {
                 initDaysSelection()
             }

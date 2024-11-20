@@ -6,77 +6,35 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct HabitView: View {
-    
-    @State var habitViewModel = HabitVM()
-    
-    let streak: Int = 30
-    
-    @State var idHabit: String = ""
-    @State var showDetail: Bool = false
-    @State var currentProgress: Double = 55
-    @State var goalProgress: Double = 100
-    @State var currentDate: Date = Date()
-    @State var animatedValue: Double = 0
-    @State var widthComponent: CGFloat = 0
+    @Query() var habits: [Habit]
     
     var body: some View {
-        if showDetail {
-            DetailView(showDetail: $showDetail, idHabit: idHabit)
-                .transition(.move(edge: .trailing))
-        } else {
-            let progressPercentage = currentProgress / goalProgress
-            VStack (alignment: .leading) {
-                HabitTitle(streak: streak)
-                DateTabView(
-                    currentDate: $currentDate
-                )
-                ProgressBar(
-                    progressPercentage: progressPercentage,
-                    animatedValue: $animatedValue,
-                    widthComponent: $widthComponent)
-                HStack {
-                    Text("Hábitos de hoy")
-                        .font(.title3)
-                        .bold()
-                    Spacer()
-                    FloatingButton(action: {
-                        withAnimation {
-                            showDetail = true
+        NavigationStack {
+            VStack () {
+                List(habits) { habit in
+                    ZStack {
+                        HabitItem(habit: habit)
+                        NavigationLink(destination: { UpdateDetailView(habit: habit) }, label: {}).opacity(0)
+                    }.listRowSeparator(.hidden)
+                }.listStyle(.plain)
+                    .overlay {
+                        if habits.isEmpty {
+                            EmptyList()
                         }
-                    })
-                }.padding(.top)
-                .padding(.horizontal)
-                
-                if habitViewModel.habits.isEmpty {
-                    EmptyList()
-                } else {
-                    if habitViewModel.isLoading {
-                        ProgressView()
-                            .progressViewStyle(CircularProgressViewStyle())
-                            .scaleEffect(1.25)
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    } else {
-                        List(habitViewModel.habits) { habit in
-                            HabitItem(habit: habit)
-                                .listRowSeparator(.hidden)
-                                .onTapGesture {
-                                    idHabit = habit.id
-                                    withAnimation {
-                                        showDetail = true
-                                    }
-                                }
-                        }.listStyle(.plain)
                     }
-                }
-                Spacer()
             }
+            .navigationTitle("Mis hábitos")
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(.white)
-            .transition(.move(edge: .leading))
-            .onAppear {
-                habitViewModel.getHabits()
+            .toolbar {
+                ToolbarItem (placement: .navigationBarTrailing) {
+                    NavigationLink(destination: { AddDetailView(isSheet: false) }) {
+                        Label("Añadir hábito", systemImage: "plus")
+                    }
+                }
             }
         }
     }

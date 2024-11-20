@@ -6,15 +6,28 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct PlanningView: View {
+    @Query() var habits: [Habit]
+    @Query() var historics: [Historic]
+    
     var body: some View {
-        Text("Semanal")
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(.green.opacity(0.5))
+        NavigationStack {
+            VStack {
+                List(habits) { habit in
+                    PlanningItem(habit: habit, historics: historics.filter { $0.idHabit == habit.id })
+                        .listRowSeparator(.hidden)
+                }.listStyle(.plain)
+                .overlay {
+                    if habits.isEmpty {
+                        EmptyList()
+                    }
+                }
+            }
+            .navigationTitle("Planificación Semanal")
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(.white)
     }
-}
-
-#Preview {
-    PlanningView()
 }
