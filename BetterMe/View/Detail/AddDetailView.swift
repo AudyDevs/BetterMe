@@ -15,8 +15,8 @@ struct AddDetailView: View {
     @State var mesure: String = ""
     @State var description: String = ""
     @State var frequency: [String] = ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"]
-    @State var selectedIcon: String = "trash"
-    @State var selectedColor: String = "red"
+    @State var selectedIcon: String = "waterbottle.fill"
+    @State var selectedColor: String = "black"
     @State var startDate: Date = Date()
     
     var body: some View {
